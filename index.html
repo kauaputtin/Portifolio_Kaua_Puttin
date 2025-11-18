@@ -320,7 +320,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Projetos cadastrados
 const projetos = [
-  // ...removido protótipo da classe 'todos'
+  // Novo protótipo Figma (classe 'prototipos' e aparece em 'todos' via filtro)
+  {
+    categoria: 'prototipos',
+    conteudo: `
+      <div class="iframe-wrap">
+        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/QJKg9TGAalgYTthWsZIJGu/PROJETO?node-id=56-675&starting-point-node-id=250%3A226&embed-host=share" allowfullscreen></iframe>
+      </div>
+    `
+  },
   {
     categoria: 'logos-banners',
     conteudo: `
