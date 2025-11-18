@@ -25,6 +25,56 @@
     width: 32px;
     height: 32px;
 }
+
+/* Estilos para os botões de método (WhatsApp / Email) */
+.contact-methods{
+    display:flex;
+    gap:12px;
+}
+.method-btn{
+    background: #111;
+    color: #fff;
+    border: 2px solid rgba(255,255,255,0.08);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap:8px;
+}
+.method-btn i{ font-size: 18px; }
+.method-btn.active{
+    background: #111;
+    color: #00ff43;
+    border: 2px solid #00ff43;
+    box-shadow: 0 6px 18px rgba(0,255,67,0.18);
+}
+.method-btn:hover{ transform: translateY(-2px); transition: transform .12s; }
+
+/* Ajuste visual do formulário de contato */
+.btn-enviar input[type="submit"]{
+    background: #00ff43;
+    color: #000;
+    border: 0;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn-enviar input[type="submit"]:hover{ box-shadow: 0 6px 18px rgba(0,255,67,0.2); transform: translateY(-2px); }
+
+/* inputs e textarea padrão */
+form#contactForm input[type="text"], form#contactForm input[type="email"], form#contactForm input[type="tel"], form#contactForm textarea{
+    width: 100%;
+    margin: 10px 0;
+    padding: 14px 12px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background: #141414;
+    color: #fff;
+}
+form#contactForm textarea{ min-height: 120px; resize: vertical; }
 @media (max-width: 700px) {
     /* ...existing code... */
     .sobre .txt-sobre ul {
@@ -273,6 +323,44 @@
     position: relative;
     z-index: 2;
 }
+/* Hexágono atrás da imagem do topo */
+.hexagon-top{
+        position: relative;
+        width: 310px;
+        max-width: 50vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.hexagon-top .hexagon-bg{
+        position: absolute;
+        width: 420px;
+        height: 480px;
+        background: #00ff43;
+        clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+        z-index: 1;
+        filter: drop-shadow(0 0 8px rgba(0,255,67,0.35));
+}
+.hexagon-top .top-photo{
+        position: relative;
+        z-index: 2;
+        width: 300px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+}
+
+@media (max-width: 1024px){
+    .hexagon-top{ width: 360px; }
+    .hexagon-top .hexagon-bg{ width: 460px; height: 520px; }
+    .hexagon-top .top-photo{ width: 320px; }
+}
+
+@media (max-width: 700px){
+    .hexagon-top{ width: 220px; }
+    .hexagon-top .hexagon-bg{ width: 300px; height: 340px; }
+    .hexagon-top .top-photo{ width: 200px; }
+}
 /* Destaque verde para palavras-chave sobre mim */
 .destaque-verde {
     color: #bebebe !important;
@@ -286,7 +374,7 @@
     background-color: #000;
 }
 .projetos .titulo {
-    color: #ffffff;
+    color: #00ff43;
     font-size: 32px;
     text-align: center;
     padding: 20px 0px;
@@ -326,10 +414,10 @@
     background: #111;
     color: #fff;
     border-radius: 10px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: auto;
+    display: block;
+    align-items: stretch;
+    justify-content: stretch;
     font-size: 18px;
     box-shadow: 0 0 0px #00ff43;
     transition: box-shadow 0.2s, transform 0.2s;
@@ -338,6 +426,32 @@
     box-shadow: 0 0 12px #00ff43;
     transform: scale(1.04);
 }
+/* Container responsivo para iframes dos projetos */
+.iframe-wrap{
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.iframe-wrap iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Em telas muito pequenas, aumentar padding-bottom para dar mais altura ao iframe */
+@media (max-width: 420px){
+  .iframe-wrap{ padding-bottom: 75%; }
+}
+
+/* Garantir que o grid acomode corretamente boxes com iframes */
+.projetos-grid { align-items: start; }
 /*ESTILO GERAL*/
 *{
     margin: 0;
@@ -590,9 +704,17 @@ section.sobre .img-sobre{
     transition: .2s;
 }
 
-section.sobre .img-sobre:hover{
-    transform: scale(1.02);
-} 
+/* Move a imagem da seção 'sobre' 30% para a esquerda conforme pedido */
+.sobre .img-sobre{
+        transform: translateX(-30%);
+}
+
+@media (max-width: 1020px){
+    /* Em telas menores, reverter o deslocamento para evitar overflow */
+    .sobre .img-sobre{
+        transform: translateX(0);
+    }
+}
 
 .sobre .txt-sobre h3{
     color: #00ff43;
@@ -609,12 +731,12 @@ section.sobre .img-sobre:hover{
 }
 
 .sobre .txt-sobre h4{
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: normal;
 }
 
 .sobre .txt-sobre h4 span{
-    font-weight: lighter;
+    font-weight: normal;
 }
 
 .sobre .txt-sobre ul {
@@ -642,8 +764,7 @@ section.sobre .img-sobre:hover{
 }
 
 .sobre .tecnologias-sobre h4{
-    
-    font-weight: lighter;
+    font-weight: normal;
     margin-bottom: 10px;
 }
 

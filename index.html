@@ -1,7 +1,9 @@
 <html>
 
 <head>
-     <!--GOOGLE FONTS-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--GOOGLE FONTS-->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -58,10 +60,7 @@
                     </p>
                   </div>
                    <div class="btn-redesocial">
-                      <a href="https://www.instagram.com/kauaputtin/" target="_blank">
-                      <button><img width="30px" src="imagens/instagram.png" alt="instagram"></button></a>
-                  
-                      <a href="https://github.com/kauaputtin/portifolioCC1Mc" target="_blank">
+                      <a href="https://github.com/kauaputtin" target="_blank">
                       <button><img width="30px" src="imagens/github verde.png" alt="github"></button></a>
                   
                       <a href="https://www.linkedin.com/in/kauã-puttin-pestana-2164ba2a2/" target="_blank">
@@ -71,7 +70,10 @@
                 </div><!--txt-topo-site-->
 
                <div class="img-topo-site">
-                 <img src="imagens/eukauaverde.png" width="400px" alt="kauaputtin">
+                 <div class="hexagon-top">
+                   <div class="hexagon-bg" aria-hidden="true"></div>
+                   <img src="imagens/kaua.png" class="top-photo" alt="kauaputtin">
+                 </div>
                </div><!--img-topo-site-->
                
                <div class="setinhaverde">
@@ -87,23 +89,23 @@
               <h2 class="titulo">MINHAS <span>ESPECIALIDADES</span></h2>
               <h4>Criatividade digital para impulsionar seu negócio</h4>
                 <div class="flex">
-                    <div class="especialidadebox">
-                        <i class="bi bi-window"></i>
-                        <h3>Website</h3>
-                        <p>Crio sites com HTML e CSS</p>
-                    </div><!--especialidadebox-->   
+                  <div class="especialidadebox">
+                    <i class="bi bi-window"></i>
+                    <h3>Website</h3>
+                    <p>Crio sites com HTML, CSS, JS e Python</p>
+                  </div><!--especialidadebox-->    
 
-                    <div class="especialidadebox">
-                        <i class="bi bi-camera-reels"></i>
-                        <h3>Edição de Vídeo</h3>
-                        <p>Faço edição de videos com CapCut</p>
-                    </div><!--especialidadebox-->   
+                  <div class="especialidadebox">
+                    <i class="bi bi-camera-reels"></i>
+                    <h3>Editor de vídeo</h3>
+                    <p>Faço edição de videos com CapCut</p>
+                  </div><!--especialidadebox-->    
 
-                    <div class="especialidadebox">
-                        <i class="bi bi-image"></i>
-                        <h3>Designer de Logo</h3>
-                        <p>Desenvolvo logos estilizadas a seu gosto</p>
-                    </div><!--especialidadebox-->   
+                  <div class="especialidadebox">
+                    <i class="bi bi-image"></i>
+                    <h3>UX/UI Designer</h3>
+                    <p>Crio produtos e interfaces digitais</p>
+                  </div><!--especialidadebox-->   
                 
                    
                 </div><!--flex-->
@@ -118,18 +120,15 @@
           <p class="subtitulo">Veja alguns de meus trabalhos</p>
           <div class="projetos-menu">
             <button class="projetos-btn" data-filter="todos">Todos</button>
-            <button class="projetos-btn" data-filter="design">Designs</button>
+            <button class="projetos-btn" data-filter="logos-banners">Logos/Banners</button>
+            <button class="projetos-btn" data-filter="prototipos">Protótipos</button>
             <button class="projetos-btn" data-filter="ebooks">Vídeos</button>
             <button class="projetos-btn" data-filter="websites">Websites</button>
           </div>
-          <div class="projetos-grid">
-            <div class="projeto-box">projeto</div>
-            <div class="projeto-box">projeto</div>
-            <div class="projeto-box">projeto</div>
-            <div class="projeto-box">projeto</div>
-            <div class="projeto-box">projeto</div>
-            <div class="projeto-box">projeto</div>
-          </div>
+            <div class="projetos-grid" id="projetosGrid" style="max-height: 500px; overflow-y: auto;">
+              <!-- Projetos reais serão inseridos aqui via JS -->
+            </div>
+            <p id="nenhumProjeto" style="text-align:center; display:none;">Nenhum projeto</p>
         </div>
       </section>
 
@@ -142,7 +141,7 @@
         <div class="interface">
             <div class="flex">
          <div class="img-sobre">
-          <img src="imagens/1-removebg-preview.png" width="450px"  alt="sobremim">
+          <img src="imagens/kaua(1).png" width="300px"  alt="sobremim">
         </div>
 
                 <div class="txt-sobre">
@@ -151,14 +150,15 @@
                     <p>Sou estudante de Ciência da computação na Universidade de Vila Velha (UVV). <br> Desde cedo, desenvolvo minhas habilidades com tecnologia e com o mundo digital. 
                         Quando mais novo, iniciei o curso de inglês da Wizard, nele permaneci durante 4 anos. Após isso conheci o mundo do designer, comecei a criar logos e banners, apenas por diversão. Mal esperava que a partir disso faria diversos projetos no futuro. 
                     </p>
-                    <p>Alguns anos depois, avancei significativamente em minha trajetória profissional. Empreendi na criação de um site de dropshipping, explorando diversas vertentes e estratégias de marketing. Ademais, neste meio tempo criei dois ebooks, editei videos para redes sociais e para outros projetos desenvolvi logos e banners.</p>
+                    <p>Alguns anos depois, avancei significativamente em minha trajetória profissional. Empreendi na criação de um site de dropshipping, explorando diversas vertentes e estratégias de marketing. Ademais, nesse meio tempo criei protótipos via figma para empresas e clientes, editei videos para redes sociais e para outros projetos desenvolvi logos e banners.</p>
                  
               <ul>
-                <li><h4><span class="destaque-verde">Nascionalidade:</span> brasileiro</h4></li>
-                <li><h4><span class="destaque-verde">Idiomas:</span> Português(nativo) e Inglês(básico)</h4></li>
-                <li><h4><span class="destaque-verde">Local:</span> Espírito Santo, Brasil</h4></li>
-                <li><h4><span class="destaque-verde">Formação Acadêmica:</span> UP-Centro Educacional</h4></li>
+                <li><h4><span class="destaque-verde">Nascionalidade:</span> Brasileiro</h4></li>
+                <li><h4><span class="destaque-verde">Idiomas:</span> Português(nativo) e Inglês(básico cursando)</h4></li>
+                <li><h4><span class="destaque-verde">Local:</span> Vila Velha - ES, Brasil</h4></li>
                 <li><h4><span class="destaque-verde">Email:</span> kauaputtin@gmail.com</h4></li>
+                <li><h4><span class="destaque-verde">Formação Acadêmica:</span> <br/>1º e 2º grau completo, UP-Centro Educacional Vila Velha (2023)
+                <br/> Ciência da Computação, Universidade de Vila Velha (previsão 2028)</h4></li>
                 <li><h4><span class="destaque-verde">Freelance:</span> Diponível</h4></li>
               </ul>
                       
@@ -184,19 +184,34 @@
            <div class="interface">
               <h2 class="titulo">ENTRE EM <span>CONTATO</span></h2>
             
-                <form action="/action_page.php"method="get">
-                    <input type="text" name="" id="" placeholder="Nome completo*" required>
-                    <input type="text" name="" id="" placeholder="Seu email*" required>
-                    <input type="text" name="" id="" placeholder="Seu telefone*" required>
-                    <textarea name="" id="" placeholder="Escreva sua mensagem" required></textarea>
+                <form id="contactForm">
+                    <label style="display:block; margin-bottom:8px; color:#fff;">Escolha como deseja ser contactado:</label>
+                    <div class="contact-methods" style="margin-bottom:12px">
+                      <button type="button" class="method-btn active" data-method="whatsapp"><i class="bi bi-whatsapp"></i> WhatsApp</button>
+                      <button type="button" class="method-btn" data-method="email"><i class="bi bi-envelope"></i> Email</button>
+                    </div>
+                    <input type="hidden" id="contactMethod" name="method" value="whatsapp">
+
+                    <input type="text" name="name" id="contactName" placeholder="Nome completo*" required>
+                    <input type="text" name="subject" id="contactSubject" placeholder="Assunto*" required class="contact-optional" style="display:none;">
+                    <input type="tel" name="phone" id="contactPhone" placeholder="Seu telefone*" required class="contact-optional" style="display:none;">
+                    <textarea name="message" id="contactMessage" placeholder="Escreva sua mensagem" required></textarea>
                     <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                    <p id="contactNotice" style="color:#00ff43; margin-top:10px; display:none;"></p>
                 </form>
             </div>
       </section>
     
     </main>
+    
+    <div class="overlay" onclick="closeLightbox()" aria-hidden="true">
+      <div class="project-modal" onclick="event.stopPropagation()">
+        <button class="close-btn" onclick="closeLightbox()" aria-label="Fechar">&times;</button>
+        <img id="lightboxImg" src="" alt="Projeto" />
+      </div>
+    </div>
 
-    <footer>
+        <footer>
         <div class="interface">
             <div class="line-footer">
                 <div class="flex">
@@ -205,16 +220,13 @@
                     </div>
                             
                    <div class="btn-redesocial">
-                       <a href="https://www.instagram.com/kauaputtin/" target="_blank">
-                       <button><img width="30px" src="imagens/instagram.png" alt="instagram"></button></a>
+                        <a href="https://github.com/kauaputtin" target="_blank">
+                        <button><img width="30px" src="imagens/github verde.png" alt="github"></button></a>
             
-                       <a href="https://github.com/kauaputtin/portifolioCC1Mc" target="_blank">
-                       <button><img width="30px" src="imagens/github verde.png" alt="github"></button></a>
-            
-                       <a href="https://www.linkedin.com/in/kauã-puttin-pestana-2164ba2a2/" target="_blank">
-                       <button><img width="30px" src="imagens/linkedin-removebg-preview.png" alt="linkedin"></button></a>
+                        <a href="https://www.linkedin.com/in/kauã-puttin-pestana-2164ba2a2/" target="_blank">
+                        <button><img width="30px" src="imagens/linkedin-removebg-preview.png" alt="linkedin"></button></a>
              
-                    </div><!--btnsocial-->
+                      </div><!--btnsocial-->
                 </div>
             </div><!--linefooter-->
 
@@ -229,6 +241,71 @@
 
  
 
+<style>
+  .projetos-btn.active {
+    border: 2px solid #00ff43; /* Borda verde */
+  }
+
+  #nenhumProjeto {
+    color: #fff; /* Cor branca para a mensagem */
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+
+  .project-modal {
+    background: transparent; /* sem caixa branca, apenas imagem */
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: none;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    position: relative;
+  }
+
+  .overlay .close-btn {
+     position: absolute;
+     top: 12px;
+     right: 12px;
+     background: #00ff43; /* fundo verde */
+     color: #000; /* X preto */
+     border: 2px solid #000; /* borda preta */
+     width: 42px;
+     height: 42px;
+     border-radius: 8px;
+     font-size: 22px;
+     line-height: 1;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+  }
+
+  /* imagem do lightbox */
+  .project-modal img#lightboxImg{
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+</style>
+
 <script>
 // Scroll suave para navegação
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -240,6 +317,236 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// Projetos cadastrados
+const projetos = [
+  // ...removido protótipo da classe 'todos'
+  {
+    categoria: 'logos-banners',
+    conteudo: `
+      <div class="iframe-wrap">
+        <img src="imagens/designers/1.png" style="width:100%; height:auto; border-radius:8px;" alt="Logo/Banner 1">
+      </div>
+    `
+  },
+  {
+    categoria: 'logos-banners',
+    conteudo: `
+      <div class="iframe-wrap">
+        <img src="imagens/designers/2023-08-29 (12).png" style="width:100%; height:auto; border-radius:8px;" alt="Logo/Banner 2">
+      </div>
+    `
+  },
+  {
+    categoria: 'logos-banners',
+    conteudo: `
+      <div class="iframe-wrap">
+        <img src="imagens/designers/2023-08-29 (6).png" style="width:100%; height:auto; border-radius:8px;" alt="Logo/Banner 3">
+      </div>
+    `
+  },
+  {
+    categoria: 'logos-banners',
+    conteudo: `
+      <div class="iframe-wrap">
+        <img src="imagens/designers/POST BLACK FRIDAY.png" style="width:100%; height:auto; border-radius:8px;" alt="Logo/Banner 4">
+      </div>
+    `
+  },
+  {
+    categoria: 'logos-banners',
+    conteudo: `
+      <div class="iframe-wrap">
+        <img src="imagens/designers/TRUE VEGAN (1).png" style="width:100%; height:auto; border-radius:8px;" alt="Logo/Banner 5">
+      </div>
+    `
+  },
+  {
+    categoria: 'logos-banners',
+    conteudo: `
+      <div class="iframe-wrap">
+        <img src="imagens/designers/WHEY (1).png" style="width:100%; height:auto; border-radius:8px;" alt="Logo/Banner 6">
+      </div>
+    `
+  },
+  {
+    categoria: 'logos-banners',
+    conteudo: `
+      <div class="iframe-wrap">
+        <img src="imagens/designers/categorais loja (1920 x 900 px) (1920 x 900 px).png" style="width:100%; height:auto; border-radius:8px;" alt="Logo/Banner 7">
+      </div>
+    `
+  },
+  {
+    categoria: 'logos-banners',
+    conteudo: `
+      <div class="iframe-wrap">
+        <img src="imagens/designers/muscleshops.png" style="width:100%; height:auto; border-radius:8px;" alt="Logo/Banner 8">
+      </div>
+    `
+  },
+  {
+    categoria: 'prototipos',
+    conteudo: `
+      <div class="iframe-wrap">
+        <iframe src="https://embed.figma.com/proto/256UDJAjA6LiYtnfVRWeqX/Nutrifit-Cliente?node-id=1-2&p=f&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&embed-host=share" allowfullscreen></iframe>
+      </div>
+    `
+  }
+];
+
+function renderProjetos(filtro = 'todos') {
+  const grid = document.getElementById('projetosGrid');
+  const nenhumProjeto = document.getElementById('nenhumProjeto');
+  grid.innerHTML = '';
+  let projetosFiltrados = projetos;
+  if (filtro !== 'todos') {
+    projetosFiltrados = projetos.filter(p => p.categoria === filtro);
+  }
+  if (projetosFiltrados.length === 0) {
+    grid.style.display = 'none';
+    nenhumProjeto.style.display = 'block';
+    nenhumProjeto.textContent = 'Nenhum projeto adicionado';
+  } else {
+    grid.style.display = 'grid';
+    nenhumProjeto.style.display = 'none';
+    projetosFiltrados.forEach(p => { // Removida a limitação de 6 imagens
+      const box = document.createElement('div');
+      box.className = 'projeto-box';
+      box.innerHTML = p.conteudo;
+        // Ao clicar no projeto, abre lightbox com a imagem original (se houver)
+        box.addEventListener('click', (e) => {
+          e.stopPropagation();
+          // parse do conteúdo para identificar imagem ou iframe
+          const tmp = document.createElement('div');
+          tmp.innerHTML = p.conteudo;
+          const img = tmp.querySelector('img');
+          const iframe = tmp.querySelector('iframe');
+          if(img && img.src){
+            openLightbox(img.src);
+          } else if(iframe && iframe.src){
+            // para protótipos em iframe, abrir em nova aba
+            window.open(iframe.src, '_blank');
+          } else {
+            // se não houver mídia reconhecida, apenas abrir o conteúdo no modal antigo (fallback)
+            openLightbox('');
+          }
+        });
+      grid.appendChild(box);
+    });
+  }
+}
+
+// Botões de filtro
+document.querySelectorAll('.projetos-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    // atualiza visual do botão ativo
+    document.querySelectorAll('.projetos-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    renderProjetos(this.getAttribute('data-filter'));
+  });
+});
+
+// Render inicial
+renderProjetos();
+
+// Funções de modal (abrir/fechar)
+function openLightbox(src){
+  const overlay = document.querySelector('.overlay');
+  if(!overlay) return;
+  const img = overlay.querySelector('#lightboxImg');
+  if(!img) return;
+  if(src){
+    img.src = src;
+    img.style.display = 'block';
+  } else {
+    img.src = '';
+    img.style.display = 'none';
+  }
+  overlay.style.display = 'flex';
+}
+
+function closeLightbox(){
+  const overlay = document.querySelector('.overlay');
+  if(!overlay) return;
+  const img = overlay.querySelector('#lightboxImg');
+  if(img) img.src = '';
+  overlay.style.display = 'none';
+}
+
+  // Contato funcional (WhatsApp / Email)
+  (function(){
+    const form = document.getElementById('contactForm');
+    const notice = document.getElementById('contactNotice');
+    const methodBtns = document.querySelectorAll('.method-btn');
+    const hiddenMethod = document.getElementById('contactMethod');
+    const optionalFields = document.querySelectorAll('.contact-optional');
+    // Número do WhatsApp com código do país (Brasil = 55)
+    const whatsappNumber = '55' + '27981538302';
+    const emailTo = 'kauaputtin@gmail.com';
+
+    function setMethod(method){
+      hiddenMethod.value = method;
+      methodBtns.forEach(b => b.classList.toggle('active', b.getAttribute('data-method') === method));
+      if(method === 'whatsapp'){
+        // mostrar apenas nome e mensagem
+        optionalFields.forEach(f => f.style.display = 'none');
+        document.getElementById('contactName').required = true;
+        document.getElementById('contactMessage').required = true;
+      } else {
+        optionalFields.forEach(f => f.style.display = 'block');
+        document.getElementById('contactEmail').required = true;
+        document.getElementById('contactPhone').required = true;
+      }
+    }
+
+    methodBtns.forEach(btn => {
+      btn.addEventListener('click', () => setMethod(btn.getAttribute('data-method')));
+    });
+
+    // inicia com whatsapp
+    setMethod(hiddenMethod.value || 'whatsapp');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      notice.style.display = 'none';
+
+      const name = document.getElementById('contactName').value.trim();
+      const subjectText = document.getElementById('contactSubject').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+      const method = hiddenMethod.value;
+
+      // Validações simples
+      if(!name || !message){
+        notice.style.display = 'block';
+        notice.textContent = 'Por favor, preencha nome e mensagem.';
+        return;
+      }
+      if(method === 'email' && (!subjectText || !phone)){
+        notice.style.display = 'block';
+        notice.textContent = 'Por favor, preencha assunto e telefone.';
+        return;
+      }
+
+      if(method === 'whatsapp'){
+        const bodyText = encodeURIComponent(`Nome: ${name}\n\nMensagem:\n${message}`);
+        const url = `https://wa.me/${whatsappNumber}?text=${bodyText}`;
+        window.open(url, '_blank');
+        notice.style.display = 'block';
+        notice.textContent = 'Abrindo WhatsApp...';
+      } else {
+        // abrir composer do Gmail
+        const subject = encodeURIComponent(subjectText);
+        const body = encodeURIComponent(`Nome: ${name}\nTelefone: ${phone}\n\n${message}`);
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailTo)}&su=${subject}&body=${body}`;
+        window.open(gmailUrl, '_blank');
+        notice.style.display = 'block';
+        notice.textContent = 'Abrindo Gmail...';
+      }
+
+    });
+  })();
 </script>
 </body>
 
