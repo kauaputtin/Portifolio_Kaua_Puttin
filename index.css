@@ -19,7 +19,7 @@
 }
 .btn-redesocial button:hover {
     box-shadow: 0 0 12px #00ff43;
-    transform: scale(1.08);
+    transform: scale(1.10);
     border-radius: 50%;
 }
 .btn-redesocial img {
