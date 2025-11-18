@@ -20,6 +20,7 @@
 .btn-redesocial button:hover {
     box-shadow: 0 0 12px #00ff43;
     transform: scale(1.08);
+    border-radius: 50%;
 }
 .btn-redesocial img {
     width: 32px;
@@ -49,8 +50,13 @@
     color: #00ff43;
     border: 2px solid #00ff43;
     box-shadow: 0 6px 18px rgba(0,255,67,0.18);
+    border-radius: 8px;
 }
-.method-btn:hover{ transform: translateY(-2px); transition: transform .12s; }
+.method-btn:hover{ 
+    transform: translateY(-2px); 
+    transition: transform .12s; 
+    border-radius: 8px;
+}
 
 /* Ajuste visual do formulário de contato */
 .btn-enviar input[type="submit"]{
@@ -62,7 +68,11 @@
     font-weight: 700;
     cursor: pointer;
 }
-.btn-enviar input[type="submit"]:hover{ box-shadow: 0 6px 18px rgba(0,255,67,0.2); transform: translateY(-2px); }
+.btn-enviar input[type="submit"]:hover{ 
+    box-shadow: 0 6px 18px rgba(0,255,67,0.2); 
+    transform: translateY(-2px);
+    transition: transform .12s;  
+}
 
 /* inputs e textarea padrão */
 form#contactForm input[type="text"], form#contactForm input[type="email"], form#contactForm input[type="tel"], form#contactForm textarea{
@@ -403,6 +413,7 @@ form#contactForm textarea{ min-height: 120px; resize: vertical; }
 .projetos-btn.active, .projetos-btn:hover {
     background: #00ff43;
     color: #222;
+    border-radius: 5px;
 }
 .projetos-grid {
     display: grid;
@@ -998,4 +1009,11 @@ footer .line-footer p, a{
     }
 
 
+}
+
+/* Efeitos de hover para botões, mantendo o border-radius original */
+button:hover, .btn-redesocial button:hover, .btn-padrao:hover, .projetos-btn:hover, .method-btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  /* Não altera o border-radius, mantém o original */
 }

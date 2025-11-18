@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--FIM BOOTSTRAP ICONS-->
      
-      <title>Curriculo Virtual</title>
+      <title>Portifólio Virtual</title>
+      <link rel="icon" type="image/png" href="imagens/favicon.png">
      
      <link rel="stylesheet" href="index.css">
 </head>
@@ -24,7 +25,7 @@
          <div class="interface">
            <div class="logo">
             <a href="#inicio">
-                <img width="100px" src="imagens/logo kaua recortada.png" alt="logo do kauã">
+                <img width="100px" src="imagens/logokaua.png" alt="logo do kauã">
             </a>
            </div><!--logo-->
            
@@ -59,6 +60,12 @@
                       a presença online que sua marca merece.
                     </p>
                   </div>
+                   <!-- Adicionar botão 'Ver currículo' acima dos botões de redes sociais -->
+                   <div class="btn-curriculo">
+                      <a href="arquivos/Meu_Curriculo.pdf" download>
+                        <button class="btn-padrao">Ver Currículo</button>
+                      </a>
+                    </div>
                    <div class="btn-redesocial">
                       <a href="https://github.com/kauaputtin" target="_blank">
                       <button><img width="30px" src="imagens/github verde.png" alt="github"></button></a>
@@ -116,7 +123,7 @@
       <!-- Seção Projetos -->
       <section id="projetos" class="projetos">
         <div class="interface">
-          <h2 class="titulo">PROJETOS</h2>
+          <h2 class="titulo"><span style="color: #fff;">MEUS</span> <span style="color: #00ff43;">PROJETOS</span></h2>
           <p class="subtitulo">Veja alguns de meus trabalhos</p>
           <div class="projetos-menu">
             <button class="projetos-btn" data-filter="todos">Todos</button>
@@ -216,7 +223,9 @@
             <div class="line-footer">
                 <div class="flex">
                     <div class="logo-footer">
-                      <img src="imagens/logo kaua recortada.png" width="100px" alt="logo">
+                      <a href="#inicio">
+                        <img src="imagens/logokaua.png" width="100px" alt="logo">
+                      </a>
                     </div>
                             
                    <div class="btn-redesocial">
@@ -304,6 +313,47 @@
     margin: 0 auto;
     object-fit: contain;
   }
+
+  /* Estilo padrão para o botão 'Ver Currículo' */
+.btn-padrao {
+  background: #00ff43;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-padrao:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(0, 255, 67, 0.5);
+}
+
+/* Ajustar posição do botão 'Ir para o site' */
+.btn-ir-site {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  transform: translateX(10px); /* Move o botão um pouco para a direita */
+}
+
+/* Ajustar margem geral da caixa de projetos */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+  padding: 20px; /* Adiciona margem interna para evitar sobreposição */
+}
+
+/* Botões mantêm o mesmo border-radius ao passar o mouse */
+button:hover {
+  transform: scale(1.05); /* Infla normalmente */
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: inherit; /* Mantém o arredondamento original do botão */
+}
 </style>
 
 <script>
@@ -400,6 +450,19 @@ const projetos = [
         <iframe src="https://embed.figma.com/proto/256UDJAjA6LiYtnfVRWeqX/Nutrifit-Cliente?node-id=1-2&p=f&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&embed-host=share" allowfullscreen></iframe>
       </div>
     `
+  },
+  {
+    categoria: 'websites',
+    conteudo: `
+      <div class="iframe-wrap">
+        <img src="imagens/websiteportifolio.png" style="width:100%; height:auto; border-radius:8px;" alt="Website Portfólio">
+        <div class="btn-ir-site">
+          <a href="https://kauaputtin.github.io/Portifolio_Kaua_Puttin" target="_blank">
+            <button style="background:#00ff43; color:#000; border:none; padding:10px 20px; border-radius:8px; cursor:pointer;">Ir para o site</button>
+          </a>
+        </div>
+      </div>
+    `
   }
 ];
 
@@ -418,28 +481,21 @@ function renderProjetos(filtro = 'todos') {
   } else {
     grid.style.display = 'grid';
     nenhumProjeto.style.display = 'none';
-    projetosFiltrados.forEach(p => { // Removida a limitação de 6 imagens
+    projetosFiltrados.forEach(p => {
       const box = document.createElement('div');
       box.className = 'projeto-box';
       box.innerHTML = p.conteudo;
-        // Ao clicar no projeto, abre lightbox com a imagem original (se houver)
+      if (p.categoria !== 'websites') {
         box.addEventListener('click', (e) => {
           e.stopPropagation();
-          // parse do conteúdo para identificar imagem ou iframe
           const tmp = document.createElement('div');
           tmp.innerHTML = p.conteudo;
           const img = tmp.querySelector('img');
-          const iframe = tmp.querySelector('iframe');
-          if(img && img.src){
+          if (img && img.src) {
             openLightbox(img.src);
-          } else if(iframe && iframe.src){
-            // para protótipos em iframe, abrir em nova aba
-            window.open(iframe.src, '_blank');
-          } else {
-            // se não houver mídia reconhecida, apenas abrir o conteúdo no modal antigo (fallback)
-            openLightbox('');
           }
         });
+      }
       grid.appendChild(box);
     });
   }
